@@ -55,8 +55,7 @@ def get_sentiment_description(text):
         descriptions.append("equally negative, positive, and neutral")
 
     # Return the list of descriptions as a string
-    return ", ".join(descriptions)
-    return token
+    return ", ".join(descriptions) + str((token))
 
 # Streamlit User Interface
 txt_box_ipt = st.text_area('Enter Text Below', height=300)
