@@ -60,10 +60,10 @@ def get_sentiment_description(text):
         result = sia.polarity_scores(i)
         if result["pos"] != 0:
             st.write(f"In the statement provided, the utilization of the word {i} "
-                     f"caused the sentence to become more positive. Value: {result['pos']}")
+                     f"caused the sentence to become more positive. Value: {result['compound']}")
         elif result["neg"] != 0:
             st.write(f"In the statement provided, the utilization of the word {i} "
-                     f"caused the sentence to become more positive. Value: {result['neg']}")
+                     f"caused the sentence to become more positive. Value: {result['compound']}")
 
     # Return the list of descriptions as a string
     return ", ".join(descriptions) + str((tokens))
