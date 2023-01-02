@@ -21,7 +21,7 @@ def get_sentiment_description(text):
     # Initialize an empty list to store the sentiment descriptions
     descriptions = []
 
-    token = word_tokenize(text)
+    tokens = word_tokenize(text)
 
     # Check the value of the 'compound' score and add the appropriate descriptions to the list
     if compound_score > 0.5:
@@ -54,8 +54,19 @@ def get_sentiment_description(text):
     elif math.isclose(pos_score, neu_score, rel_tol=0.1) and pos_score > neg_score:
         descriptions.append("equally negative, positive, and neutral")
 
+
+
+    for i in tokens:
+        result = sia.polarity_scores(i)
+        if result["pos"] != 0:
+            st.write(f"In the statement provided, the utilization of the word {i} "
+                     f"caused the sentence to become more positive. Value: {result['pos']}")
+        elif result["neg"] != 0:
+            st.write(f"In the statement provided, the utilization of the word {i} "
+                     f"caused the sentence to become more positive. Value: {result['neg']}")
+
     # Return the list of descriptions as a string
-    return ", ".join(descriptions) + str((token))
+    return ", ".join(descriptions) + str((tokens))
 
 # Streamlit User Interface
 txt_box_ipt = st.text_area('Enter Text Below', height=300)
