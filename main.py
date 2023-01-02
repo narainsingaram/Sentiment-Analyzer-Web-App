@@ -59,21 +59,22 @@ def get_sentiment_description(text):
     for i in tokens:
         result = sia.polarity_scores(i)
         if result["pos"] != 0:
-            st.write(f"In the statement provided, the utilization of the word {i} "
+            descriptions.append(f"In the statement provided, the utilization of the word {i} "
                      f"caused the sentence to become more positive. Value: {result['compound']}")
         elif result["neg"] != 0:
-            st.write(f"In the statement provided, the utilization of the word {i} "
+            descriptions.append(f"In the statement provided, the utilization of the word {i} "
                      f"caused the sentence to become more positive. Value: {result['compound']}")
 
     # Return the list of descriptions as a string
     return ", ".join(descriptions) + str((tokens))
 
 # Streamlit User Interface
+st.header("Python Sentiment Finder")
 txt_box_ipt = st.text_area('Enter Text Below', height=300)
 submit = st.button('Generate')
 
 if submit:
-    st.code(get_sentiment_description(txt_box_ipt), language='xml')
+    st.write(get_sentiment_description(txt_box_ipt), language='xml')
 
 
 
