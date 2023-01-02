@@ -1,6 +1,6 @@
 # Import the SentimentIntensityAnalyzer from nltk.sentiment.vader
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
+import math
 # Get Streamlit to Host Website
 import streamlit as st
 
@@ -40,13 +40,13 @@ def get_sentiment_description(text):
         descriptions.append("more negative than positive or neutral")
     elif pos_score > neg_score and pos_score > neu_score:
         descriptions.append("more positive than negative or neutral")
-    elif neg_score == pos_score and neg_score > neu_score:
+    elif pos_score > neg_score and pos_score > neu_score:
+        descriptions.append("more positive than negative or neutral")
+    elif math.isclose(neg_score, pos_score, rel_tol=0.1) and neg_score > neu_score:
         descriptions.append("equally negative and positive, more than neutral")
-    elif neg_score == neu_score and neg_score > pos_score:
+    elif math.isclose(neg_score, neu_score, rel_tol=0.1) and neg_score > pos_score:
         descriptions.append("equally negative and neutral, more than positive")
-    elif pos_score == neu_score and pos_score > neg_score:
-        descriptions.append("equally positive and neutral, more than negative")
-    elif neg_score == pos_score and neg_score == neu_score:
+    elif math.isclose(pos_score, neu_score, rel_tol=0.1) and pos_score > neg_score:
         descriptions.append("equally negative, positive, and neutral")
 
     # Return the list of descriptions as a string
