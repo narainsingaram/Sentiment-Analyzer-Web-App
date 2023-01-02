@@ -1,5 +1,8 @@
 # Import the SentimentIntensityAnalyzer from nltk.sentiment.vader
+import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.tokenize import word_tokenize
+nltk.download('punkt')
 import math
 # Get Streamlit to Host Website
 import streamlit as st
@@ -17,6 +20,8 @@ def get_sentiment_description(text):
 
     # Initialize an empty list to store the sentiment descriptions
     descriptions = []
+
+    token = word_tokenize(text)
 
     # Check the value of the 'compound' score and add the appropriate descriptions to the list
     if compound_score > 0.5:
@@ -51,14 +56,14 @@ def get_sentiment_description(text):
 
     # Return the list of descriptions as a string
     return ", ".join(descriptions)
-
+    return token
 
 # Streamlit User Interface
 txt_box_ipt = st.text_area('Enter Text Below', height=300)
 submit = st.button('Generate')
 
 if submit:
-    st.code(get_sentiment_description(txt_box_ipt), language='python')
+    st.code(get_sentiment_description(txt_box_ipt), language='xml')
 
 
 
