@@ -53,12 +53,12 @@ def get_sentiment_description(text):
     return ", ".join(descriptions)
 
 
-# TextBox in User Interface
-txt_box_ipt = st.text_area('Enter Text Below (maximum 800 words):', height=300)
+# Streamlit User Interface
+txt_box_ipt = st.text_area('Enter Text Below', height=300)
 submit = st.button('Generate')
 
 if submit:
-    st.write(get_sentiment_description(txt_box_ipt))
+    st.code(get_sentiment_description(txt_box_ipt), language='python')
 
 
 
