@@ -73,7 +73,7 @@ def get_sentiment_description(text):
 
 # Streamlit User Interface
 st.header("Python Sentiment Finder")
-txt_box_ipt = st.text_area('Enter Text Below', height=300)
+txt_box_ipt = st.text_area('Enter a statement below to find its overall sentiment/emotion', height=300)
 submit = st.button('Generate')
 
 if submit:
