@@ -1,6 +1,7 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
+
 nltk.download('punkt')
 import math
 # Get Streamlit to Host Website
@@ -61,12 +62,14 @@ def get_sentiment_description(text):
 
 ''')
         elif result["neg"] != 0:
-            descriptions.append(f'''\nThe use of the word {i} caused the sentence to become more negative. Value: {result['compound']}\n
+            descriptions.append(
+                f'''\nThe use of the word {i} caused the sentence to become more negative. Value: {result['compound']}\n
 
 ''')
 
     # Return the list of descriptions as a string
     return " \n".join(descriptions)
+
 
 # Streamlit User Interface
 st.header("Python Sentiment Finder")
@@ -75,8 +78,3 @@ submit = st.button('Generate')
 
 if submit:
     st.markdown(get_sentiment_description(txt_box_ipt))
-
-
-
-
-
