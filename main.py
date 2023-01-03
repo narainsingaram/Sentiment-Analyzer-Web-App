@@ -72,7 +72,7 @@ def get_sentiment_description(text):
 
 
 # Streamlit User Interfacef
-st.beta_set_page_config(page_title='Sentiment Finder', page_icon = "😀")
+st.set_page_config(page_title='Sentiment Finder', page_icon = "😀")
 
 st.header("Python Sentiment Finder")
 txt_box_ipt = st.text_area('Enter a statement below to find its overall sentiment/emotion', height=300)
