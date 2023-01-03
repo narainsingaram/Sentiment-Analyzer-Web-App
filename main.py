@@ -54,8 +54,6 @@ def get_sentiment_description(text):
     elif math.isclose(pos_score, neu_score, rel_tol=0.1) and pos_score > neg_score:
         descriptions.append("equally negative, positive, and neutral")
 
-
-
     for i in tokens:
         result = sia.polarity_scores(i)
         if result["pos"] != 0:
@@ -69,7 +67,7 @@ def get_sentiment_description(text):
 ''')
 
     # Return the list of descriptions as a string
-    return ", ".join(descriptions)
+    return " \n".join(descriptions)
 
 # Streamlit User Interface
 st.header("Python Sentiment Finder")
