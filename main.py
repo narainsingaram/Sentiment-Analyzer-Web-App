@@ -1,11 +1,10 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
+import math
+import streamlit as st
 
 nltk.download('punkt')
-import math
-# Get Streamlit to Host Website
-import streamlit as st
 
 
 def get_sentiment_description(text):
