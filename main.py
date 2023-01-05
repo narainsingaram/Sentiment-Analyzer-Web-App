@@ -70,7 +70,7 @@ def get_sentiment_description(text):
     return " \n".join(descriptions)
 
 
-# Streamlit User Interfacef
+# Streamlit User Interface
 st.set_page_config(page_title='Sentiment Finder', page_icon = "😀")
 
 st.header("Python Sentiment Finder")
