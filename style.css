@@ -3,3 +3,11 @@
     background-color: rgb(38, 39, 48);
     color: rgb(140, 150, 170) !important;
 }
+
+.css-5uatcg {
+    border-radius: 10px;
+    background-color: rgb(38, 39, 48);
+    padding: 10px 15px;
+    border: none;
+    float: right;
+}
