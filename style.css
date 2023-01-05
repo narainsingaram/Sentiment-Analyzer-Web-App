@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    font-family: Poppins !important;
+}
+
 .st-bb {
     border-radius: 10px;
     background-color: rgb(38, 39, 48);
