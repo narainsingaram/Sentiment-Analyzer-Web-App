@@ -57,13 +57,13 @@ def get_sentiment_description(text):
     for i in tokens:
         result = sia.polarity_scores(i)
         if result["pos"] != 0:
-            descriptions.append(f'''\nThe use of the word **:blue[{i}]**
+            descriptions.append(f'''\nThe use of the word **:green[{i}]**
                      caused the sentence to become more **:green[positive ({result['compound']})]**.\n
 
 ''')
         elif result["neg"] != 0:
-            descriptions.append(
-                f'''\nThe use of the word {i} caused the sentence to become more negative. Value: {result['compound']}\n
+            descriptions.append(f'''\nThe use of the word **:red[{i}]**
+                                caused the sentence to become more **:red[positive ({result['compound']})]**.\n
 
 ''')
 
