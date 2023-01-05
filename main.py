@@ -78,4 +78,4 @@ txt_box_ipt = st.text_area('Enter a statement below to find its overall sentimen
 submit = st.button('Generate')
 
 if submit:
-    st.markdown(get_sentiment_description(txt_box_ipt))
+    st.text_area(value=f"{get_sentiment_description(txt_box_ipt)}")
