@@ -1,3 +1,4 @@
+import time
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
@@ -73,9 +74,13 @@ def get_sentiment_description(text):
 # Streamlit User Interface
 st.set_page_config(page_title='Sentiment Finder', page_icon = "😀")
 
+with st.spinner('Loading...'):
+    time.sleep(0.25)
+
 st.header("Python Sentiment Finder")
+
 txt_box_ipt = st.text_area('Enter a statement below to find its overall sentiment/emotion', height=300)
 submit = st.button('Generate')
 
 if submit:
-    st.markdown(get_sentiment_description(txt_box_ipt))
+    st.info(get_sentiment_description(txt_box_ipt))
