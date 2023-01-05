@@ -74,9 +74,6 @@ def get_sentiment_description(text):
 # Streamlit User Interface
 st.set_page_config(page_title='Sentiment Finder', page_icon = "😀")
 
-with st.spinner('Loading...'):
-    time.sleep(0.25)
-
 st.header("Python Sentiment Finder")
 
 txt_box_ipt = st.text_area('Enter a statement below to find its overall sentiment/emotion', height=300)
