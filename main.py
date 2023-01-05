@@ -8,6 +8,9 @@ import streamlit as st
 nltk.download('vader_lexicon')
 nltk.download('punkt')
 
+def open_css_file(file):
+    with open ("style.css", 'r') as file:
+        st.markdown(f'<style>{file.read()}</style>', unsafe_allow_html=True)
 
 def get_sentiment_description(text):
     # Create a new SentimentIntensityAnalyzer object
@@ -73,6 +76,7 @@ def get_sentiment_description(text):
 
 # Streamlit User Interface
 st.set_page_config(page_title='Sentiment Finder', page_icon = "😀")
+open_css_file("style.css")
 
 st.header("Python Sentiment Finder")
 
