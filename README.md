@@ -1,4 +1,4 @@
-# Sentiment-Analyzer-Web-App
+# 😃 Sentiment-Analyzer-Web-App
 
 This program determines the sentiment of a given text input and provides a list of sentiment descriptions. The program uses the **VADER (Valence Aware Dictionary and sEntiment Reasoner)** sentiment analysis tool from the Natural Language Toolkit (nltk) library to analyze the sentiment of the input text.
 
