@@ -13,7 +13,6 @@ You can install them using the following command:
 
 ```
 pip install nltk streamlit
-
 ```
 
 You also need to download the VADER lexicon and punkt tokenizer from nltk. You can do this by running the following commands:
