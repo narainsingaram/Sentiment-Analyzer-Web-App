@@ -80,7 +80,7 @@ open_css_file("style.css")
 st.header("Python Sentiment Finder")
 
 txt_box_ipt = st.text_area('Enter a statement below to find its overall sentiment/emotion', height=300)
-submit = st.button('Generate')
+submit = st.button('Find')
 
 if submit:
     st.subheader("Sentiment Output")
