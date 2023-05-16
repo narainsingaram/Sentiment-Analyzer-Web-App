@@ -28,15 +28,15 @@ def get_sentiment_description(text):
 
     # Check the value of the 'compound' score and add the appropriate descriptions to the list
     if compound_score > 0.5:
-        descriptions.append("strongly positive")
+        descriptions.append("strongly positive \n")
     elif compound_score > 0.1:
-        descriptions.append("positive")
+        descriptions.append("positive \n")
     elif compound_score > -0.1:
-        descriptions.append("neutral")
+        descriptions.append("neutral \n")
     elif compound_score > -0.5:
-        descriptions.append("negative")
+        descriptions.append("negative \n")
     else:
-        descriptions.append("strongly negative")
+        descriptions.append("strongly negative \n")
 
     # Get the 'neg', 'pos', and 'neu' scores from the sentiment dictionary
     neg_score = sentiment['neg']
@@ -83,5 +83,6 @@ txt_box_ipt = st.text_area('Enter a statement below to find its overall sentimen
 submit = st.button('Generate')
 
 if submit:
+    st.subheader("Sentiment Output")
     output_text = get_sentiment_description(txt_box_ipt)
     st.info(output_text)
